@@ -39,15 +39,27 @@ CLEAN_VENDOR=true
 SECTION=
 KANG=
 
-SRC=$1
-SRC_VENDOR=$2
+while [ "${#}" -gt 0 ]; do
+    case "${1}" in
+        -n | --no-cleanup )
+                CLEAN_VENDOR=false
+                ;;
+        -k | --kang )
+                KANG="--kang"
+                ;;
+        -s | --section )
+                SECTION="${2}"; shift
+                CLEAN_VENDOR=false
+                ;;
+        * )
+                SRC="${1}"
+                ;;
+    esac
+    shift
+done
 
 if [ -z "${SRC}" ]; then
     SRC="adb"
-fi
-
-if [ -z "${SRC_VENDOR}" ]; then
-    SRC_VENDOR="adb"
 fi
 
 # Initialize the helper for common device
@@ -58,5 +70,9 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
 
 extract "${MY_DIR}/proprietary-files-vendor.txt" "${SRC_VENDOR}" \
         "${KANG}" --section "${SECTION}"
+
+COMMON_BLOB_ROOT="${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE_COMMON}/proprietary"
+
+sed -i "s/android.hidl.base@1.0.so/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/" "${COMMON_BLOB_ROOT}/lib64/libwfdnative.so" "${COMMON_BLOB_ROOT}/lib/libwfdnative.so"
 
 "${MY_DIR}/setup-makefiles.sh"
