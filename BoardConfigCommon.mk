@@ -46,7 +46,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_CLANG_VERSION := 9.0.4
+TARGET_KERNEL_CLANG_VERSION := 9.0.5
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8150
 
 # Platform
@@ -165,6 +165,7 @@ VENDOR_SECURITY_PATCH := 2018-08-05
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
 # Soong namespaces
