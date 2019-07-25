@@ -213,7 +213,7 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libvulkan \
     vendor.display.config@1.7 \
-    vendor.display.config@1.7.vendor \
+    vendor.display.config@1.7.vendor
 
 
 # DisplayMode
@@ -393,6 +393,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
+# Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
 
@@ -400,16 +401,16 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # Prebuilts
-#PRODUCT_PACKAGES += \
-#    OnePlusCamera \
-#    OnePlusGallery \
-#    OnePlusCameraService
+PRODUCT_PACKAGES += \
+    OnePlusCamera \
+    OnePlusGallery \
+    OnePlusCameraService
 
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/prebuilts/lib/libopcameralib-em.so:system/lib/libopcameralib-em.so  \
-#    $(LOCAL_PATH)/prebuilts/lib/libstagefright.so:system/lib/libstagefright.so  \
-#    $(LOCAL_PATH)/prebuilts/lib64/libstagefright.so:system/lib64/libstagefright.so  \
-#    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/lib/libopcameralib-em.so:system/lib/libopcameralib-em.so  \
+    $(LOCAL_PATH)/prebuilts/lib/libstagefright.so:system/lib/libstagefright.so  \
+    $(LOCAL_PATH)/prebuilts/lib64/libstagefright.so:system/lib64/libstagefright.so  \
+    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
 
 # TextClassifier
 PRODUCT_PACKAGES += \
