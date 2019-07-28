@@ -216,9 +216,9 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.7.vendor
 
 
-# DisplayMode
+# AOSiP Device Settings
 PRODUCT_PACKAGES += \
-    DisplayMode
+    DeviceSettings
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -298,10 +298,6 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.oneplus_msmnile
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -401,16 +397,16 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # Prebuilts
-PRODUCT_PACKAGES += \
-    OnePlusCamera \
-    OnePlusGallery \
-    OnePlusCameraService
+#PRODUCT_PACKAGES += \
+#    OnePlusCamera \
+#    OnePlusGallery \
+#    OnePlusCameraService
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/lib/libopcameralib-em.so:system/lib/libopcameralib-em.so  \
-    $(LOCAL_PATH)/prebuilts/lib/libstagefright.so:system/lib/libstagefright.so  \
-    $(LOCAL_PATH)/prebuilts/lib64/libstagefright.so:system/lib64/libstagefright.so  \
-    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/prebuilts/lib/libopcameralib-em.so:system/lib/libopcameralib-em.so  \
+#    $(LOCAL_PATH)/prebuilts/lib/libstagefright.so:system/lib/libstagefright.so  \
+#    $(LOCAL_PATH)/prebuilts/lib64/libstagefright.so:system/lib64/libstagefright.so  \
+#    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
 
 # TextClassifier
 PRODUCT_PACKAGES += \
@@ -424,7 +420,6 @@ PRODUCT_PACKAGES += \
 
 # Tri-state keys
 PRODUCT_PACKAGES += \
-    KeyHandler \
     tri-state-key_daemon
 
 # Update engine
