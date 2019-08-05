@@ -23,7 +23,7 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceManager;
 
-import com.android.internal.util.aosip.FileUtils;
+import com.android.internal.util.bliss.FileUtils;
 
 public class SRGBModeSwitch implements OnPreferenceChangeListener {
 
