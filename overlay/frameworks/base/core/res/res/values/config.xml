@@ -454,4 +454,6 @@
     <!-- Enable system navigation keys. -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
 
+    <integer name="config_screen_off_delay">0</integer>
+
 </resources>
