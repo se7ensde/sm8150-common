@@ -30,7 +30,7 @@ AB_OTA_PARTITIONS += \
     dtbo \
     system \
     vendor \
-    vbmeta \
+    vbmeta
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -398,18 +398,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-# Prebuilts
-#PRODUCT_PACKAGES += \
-#    OnePlusCamera \
-#    OnePlusGallery \
-#    OnePlusCameraService
-
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/prebuilts/lib/libopcameralib-em.so:system/lib/libopcameralib-em.so  \
-#    $(LOCAL_PATH)/prebuilts/lib/libstagefright.so:system/lib/libstagefright.so  \
-#    $(LOCAL_PATH)/prebuilts/lib64/libstagefright.so:system/lib64/libstagefright.so  \
-#    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
 
 # TextClassifier
 PRODUCT_PACKAGES += \

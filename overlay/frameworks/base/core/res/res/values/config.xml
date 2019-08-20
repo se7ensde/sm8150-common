@@ -81,17 +81,19 @@
          does not require auto-restore. -->
     <!-- the 6th element indicates boot-time dependency-met value. -->
     <string-array translatable="false" name="networkAttributes">
-        <item>wifi,1,1,1,-1,true</item>
-        <item>mobile,0,0,0,-1,true</item>
-        <item>mobile_mms,2,0,4,60000,true</item>
-        <item>mobile_supl,3,0,2,60000,true</item>
-        <item>mobile_dun,4,0,2,60000,true</item>
-        <item>mobile_hipri,5,0,3,60000,true</item>
-        <item>mobile_fota,10,0,2,60000,true</item>
-        <item>mobile_ims,11,0,2,60000,true</item>
-        <item>mobile_cbs,12,0,2,60000,true</item>
-        <item>bluetooth,7,7,2,-1,true</item>
-        <item>mobile_emergency,15,0,5,-1,true</item>
+        <item>"wifi,1,1,1,-1,true"</item>
+        <item>"mobile,0,0,0,-1,true"</item>
+        <item>"mobile_mms,2,0,4,60000,true"</item>
+        <item>"mobile_supl,3,0,2,60000,true"</item>
+        <item>"mobile_dun,4,0,2,60000,true"</item>
+        <item>"mobile_hipri,5,0,3,60000,true"</item>
+        <item>"mobile_fota,10,0,2,60000,true"</item>
+        <item>"mobile_ims,11,0,2,60000,true"</item>
+        <item>"mobile_cbs,12,0,2,60000,true"</item>
+        <item>"mobile_ia,14,0,2,-1,true"</item>
+        <item>"bluetooth,7,7,2,-1,true"</item>
+        <item>"ethernet,9,9,9,-1,true"</item>
+        <item>"mobile_emergency,15,0,5,-1,true</item>
     </string-array>
 
     <!-- Dhcp range (min, max) to use for tethering purposes -->
@@ -135,6 +137,7 @@
         <item>"1,1"</item>
         <item>"0,1"</item>
         <item>"7,1"</item>
+        <item>"9,1"</item>
     </string-array>
 
     <!-- Boolean indicating if restoring network selection should be skipped -->
@@ -153,10 +156,6 @@
 
     <!-- MMS user agent prolfile url -->
     <string name="config_mms_user_agent_profile_url" translatable="false">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
-
-    <bool name="config_mms_content_disposition_support">true</bool>
-
-    <string name="default_sms_application">com.android.mms</string>
 
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
@@ -237,7 +236,7 @@
     <bool name="config_dozeAlwaysOnEnabled">true</bool>
 
     <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
-    <bool name="config_displayBlanksAfterDoze">true</bool>
+    <bool name="config_displayBlanksAfterDoze">false</bool>
 
     <!-- True if the display hardware only has brightness buckets rather than a full range of
          backlight values -->
@@ -376,24 +375,6 @@
     <integer-array name="config_keyboardTapVibePattern">
         <item>10</item>
     </integer-array>
-
-    <integer-array name="config_scrollBarrierVibePattern">
-        <item>0</item>
-        <item>15</item>
-        <item>10</item>
-        <item>10</item>
-    </integer-array>
-
-    <array name="config_minimumBrightnessCurveLux">
-        <item>0.0</item>
-        <item>2000.0</item>
-        <item>4000.0</item>
-    </array>
-    <array name="config_minimumBrightnessCurveNits">
-        <item>0.0</item>
-        <item>50.0</item>
-        <item>90.0</item>
-    </array>
 
     <!-- Boolean indicating if current platform supports BLE peripheral mode -->
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
