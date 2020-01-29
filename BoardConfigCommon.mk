@@ -10,6 +10,8 @@ BOARD_VENDOR := oneplus
 
 VENDOR_PATH := device/oneplus/sm8150-common
 
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
