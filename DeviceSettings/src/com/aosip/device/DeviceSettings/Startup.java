@@ -85,22 +85,6 @@ public class Startup extends BroadcastReceiver {
         VibratorStrengthPreference.restore(context);
     }
 
-    private void restore(String file, boolean enabled) {
-        if (file == null) {
-            return;
-        }
-        if (enabled) {
-            Utils.writeValue(file, "1");
-        }
-    }
-
-    private void restore(String file, String value) {
-        if (file == null) {
-            return;
-        }
-        Utils.writeValue(file, value);
-    }
-
     private boolean hasRestoredTunable(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         return preferences.getBoolean(ONE_TIME_TUNABLE_RESTORE, false);
