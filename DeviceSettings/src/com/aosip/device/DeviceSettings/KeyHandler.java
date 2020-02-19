@@ -54,11 +54,14 @@ import com.android.internal.util.bliss.BlissUtils;
 
 import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
 
+import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
+
 public class KeyHandler implements DeviceKeyHandler {
 
     private static final String TAG = KeyHandler.class.getSimpleName();
     private static final int GESTURE_REQUEST = 1;
     private static String FPNAV_ENABLED_PROP = "sys.fpnav.enabled";
+    private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
     private static final boolean DEBUG = false;
 
     private static final SparseIntArray sSupportedSliderZenModes = new SparseIntArray();
@@ -78,7 +81,10 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
-    public static final String CLIENT_PACKAGE_PATH = "/data/misc/bliss/client_package_name";
+    public static final String CLIENT_PACKAGE_PATH = "/data/misc/crdroid/client_package_name";
+
+    // Single tap key code
+    private static final int SINGLE_TAP = 67;
 
     private final Context mContext;
     private final PowerManager mPowerManager;
@@ -127,7 +133,7 @@ public class KeyHandler implements DeviceKeyHandler {
         systemStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         mContext.registerReceiver(mSystemStateReceiver, systemStateFilter);
 
-        isOPCameraAvail = BlissUtils.isAvailableApp("com.oneplus.camera", context);
+        isOPCameraAvail = Utils.isAvailableApp("com.oneplus.camera", context);
         if (isOPCameraAvail) {
             mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
             mClientObserver.startWatching();
@@ -227,4 +233,40 @@ public class KeyHandler implements DeviceKeyHandler {
         }
     }
 
+    private void onDisplayOff() {
+        if (DEBUG) Log.i(TAG, "Display off");
+        if (mClientObserver != null) {
+            mClientObserver.stopWatching();
+            mClientObserver = null;
+        }
+    }
+
+    private void onDisplayOn() {
+        if (DEBUG) Log.i(TAG, "Display on");
+        if ((mClientObserver == null) && (isOPCameraAvail)) {
+            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
+            mClientObserver.startWatching();
+        }
+    }
+
+    private class ClientPackageNameObserver extends FileObserver {
+
+        public ClientPackageNameObserver(String file) {
+            super(CLIENT_PACKAGE_PATH, MODIFY);
+        }
+
+        @Override
+        public void onEvent(int event, String file) {
+            String pkgName = Utils.getFileValue(CLIENT_PACKAGE_PATH, "0");
+            if (event == FileObserver.MODIFY) {
+                try {
+                    Log.d(TAG, "client_package" + file + " and " + pkgName);
+                    mProvider = IOnePlusCameraProvider.getService();
+                    mProvider.setPackageName(pkgName);
+                } catch (RemoteException e) {
+                    Log.e(TAG, "setPackageName error", e);
+                }
+            }
+        }
+    }
 }
