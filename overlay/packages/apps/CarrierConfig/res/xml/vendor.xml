@@ -88,6 +88,40 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="carrier_rtt_upgrade_supported" value="false"/>
         <boolean name="carrier_rtt_downgrade_supported" value="false"/>
         <boolean name="show_rtt_visibility_setting_bool" value="false" />
+        <string-array name="carrier_metered_iwlan_apn_types_strings" num="4">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+            <item value="fota" />
+        </string-array>
+        <long name="carrier_data_call_apn_delay_default_long" value="10000" />
+        <string-array name="carrier_metered_apn_types_strings" num="4">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+            <item value="fota" />
+        </string-array>
+        <string-array name="carrier_metered_roaming_apn_types_strings" num="4">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+            <item value="fota" />
+        </string-array>
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="enhanced_4g_lte_on_by_default_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="carrier_default_wfc_ims_enabled_bool" value="false" />
+        <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
+        <boolean name="config_force_send_sms_over_cs" value="false" />
+        <boolean name="vendor_hide_volte_settng_ui" value="false" />
+        <boolean name="vendor_hide_wfc_preference_ui" value="false" />
+        <boolean name="gsm_cdma_calls_can_be_hd_audio" value="true" />
+        <boolean name="vendor_ecc_after_radio_on_under_flight_mode" value="false" />
+        <boolean name="vendor_disallow_data_roaming_settings" value="false" />
+        <boolean name="vendor_hide_call_forward_ui" value="false" />
+        <boolean name="vendor_hide_additional_settings_ui" value="false" />
+        <boolean name="config_enable_password_callbarring" value="false" />
         <boolean name="rtt_always_enabled_bool" value="false" />
 
         <!-- HD/VOLTE icon support -->
