@@ -1686,7 +1686,6 @@ vendor/lib/libwigig_flashaccess.so
 vendor/lib/libwigig_pciaccess.so
 vendor/lib/libwigig_utils.so
 vendor/lib/libwigigsensing.so
-vendor/lib64/libwifi-hal.so
 vendor/lib64/libaoa.so
 vendor/lib64/libwigig_flashaccess.so
 vendor/lib64/libwigig_pciaccess.so
@@ -1774,11 +1773,3 @@ vendor/lib/libwfduibcsrcinterface_proprietary.so
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 vendor/lib64/libwfdhdcpcp.so
-
-# Misc
-vendor/lib/libnpu.so
-vendor/lib/libhta_controller.so
-vendor/lib/libhta_hexagon_runtime.so
-vendor/lib64/libnpu.so
-vendor/lib64/libhta_controller.so
-vendor/lib64/libhta_hexagon_runtime.so
