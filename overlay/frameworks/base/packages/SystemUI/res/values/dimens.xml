@@ -33,4 +33,11 @@
 
     <!-- TrustDrawable: Inner radius at the end of the exit animation -->
     <dimen name="trust_circle_inner_radius_exit">32dp</dimen>
+
+    <!-- Bottom margin size when fingerprint in display is active -->
+    <dimen name="keyguard_indication_margin_bottom_fingerprint_in_display">20dp</dimen>
+    <dimen name="status_bar_extra_padding">15dp</dimen>
+
+    <!-- Biometric Prompt -->
+    <dimen name="biometric_dialog_fod_margin">30dp</dimen>
 </resources>
