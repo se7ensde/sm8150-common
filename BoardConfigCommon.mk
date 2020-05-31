@@ -182,7 +182,11 @@ TARGET_RIL_VARIANT := caf
 TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD := true
 
 # Security patch level
+<<<<<<< HEAD
 VENDOR_SECURITY_PATCH := 2019-09-05
+=======
+VENDOR_SECURITY_PATCH := 2020-05-01
+>>>>>>> c0b0973... sm8150-common: update vendor security patch to match OOS 10.3.3
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
