@@ -16,12 +16,3 @@ allow system_app sysfs_graphics:file { getattr open read };
 # Allow DeviceSettings to read and write to proc_touchpanel, to toggle single-tap gesture
 allow system_app proc_touchpanel:dir search;
 allow system_app proc_touchpanel:file rw_file_perms;
-<<<<<<< HEAD
-=======
-
-# allow system_app to interact with pasr hal
-hal_client_domain(system_app, hal_pasrmanager)
-
-allow system_app hal_display_hwservice:hwservice_manager find;
-binder_call(system_app, hal_display_default)
->>>>>>> 059738b... DeviceSettings: Use OOS way to switch panel color modes

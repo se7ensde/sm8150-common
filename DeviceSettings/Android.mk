@@ -37,11 +37,7 @@ LOCAL_RESOURCE_DIR := \
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     vendor.oneplus.camera.CameraHIDL-V1.0-java \
-<<<<<<< HEAD
     org.lineageos.platform.internal
-=======
-    vendor.oneplus.hardware.display-V1.0-java
->>>>>>> 059738b... DeviceSettings: Use OOS way to switch panel color modes
 
 package_resource_overlays := $(strip \
     $(wildcard $(foreach dir, $(PRODUCT_PACKAGE_OVERLAYS), \
