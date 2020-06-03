@@ -62,16 +62,12 @@ public class Startup extends BroadcastReceiver {
         mHBM = false;
         restore(NightModeSwitch.getFile(), enabled);
         }
-<<<<<<< HEAD:DeviceSettings/src/com/aosip/device/DeviceSettings/Startup.java
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_WIDECOLOR_SWITCH, false);
         if (enabled) {
         mHBM = false;
         restore(WideColorModeSwitch.getFile(), enabled);
         }
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_FPS_INFO, false);
-=======
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_GESTURE_SINGLE_TAP_SWITCH, false);
->>>>>>> 91e8e60... DeviceSettings: Clean panel modes:DeviceSettings/src/org/lineageos/device/DeviceSettings/Startup.java
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
         }
