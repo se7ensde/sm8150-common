@@ -691,7 +691,6 @@ vendor/lib64/vendor.qti.esepowermanager@1.0.so
 -vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/bin/qfp-daemon
 vendor/etc/permissions/qti_fingerprint_interface.xml
-<<<<<<< HEAD
 vendor/lib/fp_hal_extension.so
 vendor/lib/hw/goodix.fod.msmnile.so
 vendor/lib/libgf_ud_hal.so
@@ -704,12 +703,6 @@ vendor/lib64/libgf_ud_hal.so
 vendor/lib64/libhvx_proxy_stub.so
 vendor/lib64/libqfp-service.so
 vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
-=======
-vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
-vendor/lib64/libarm_proxy_skel.so
-vendor/lib64/libhvx_proxy_stub.so
-vendor/lib64/libqfp-service.so
->>>>>>> 8cfa3ca... Revert "sm8150-common: Drop qfp related blobs"
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # FM
