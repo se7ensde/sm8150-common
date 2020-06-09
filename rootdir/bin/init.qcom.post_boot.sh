@@ -4261,10 +4261,6 @@ case "$target" in
 
 	# configure governor settings for silver cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
-	echo 1209600 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-	echo 576000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
 
 	# configure governor settings for gold cluster
@@ -4282,20 +4278,12 @@ case "$target" in
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/pl
 
 	# configure input boost settings
-	# ifndef VENDOR_EDIT
-	# simon.ma@SYSTEM, 2019/5/16, modify for GCE-4271 to make slide smoothly
-	# echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
-	# echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
-	# else VENDOR_EDIT
-	echo "0:1555200" > /sys/module/cpu_boost/parameters/input_boost_freq
-	echo 700 > /sys/module/cpu_boost/parameters/input_boost_ms
-	# endif VENDOR_EDIT
+	echo "0:1324800 1:1324800 2:1324800 3:1324800 4:1036800 5:1036800 6:1036800 7:825800" > /sys/module/cpu_boost/parameters/input_boost_freq
+	echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
 
-	# ifdef VENDOR_EDIT
-	# simon.ma@SYSTEM, 2019/5/16, add for GCE-8382 to modify the minfree value of lmk
-	echo "18432,23040,27648,51256,150296,200640" > /sys/module/lowmemorykiller/parameters/minfree
-	# endif VENDOR_EDIT
-
+	#set LMK tweaks
+	echo  "14936,29872,44808,59744,74680,89616" > /sys/module/lowmemorykiller/parameters/minfree
+	
 	# Disable wsf, beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
 	# set watermark_scale_factor = 36MB * 1024 * 1024 * 10 / MemTotal
