@@ -4265,18 +4265,19 @@ case "$target" in
 
 	# configure governor settings for gold cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
-	echo 1612800 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
 
 	# configure governor settings for gold+ cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
-	echo 1612800 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/pl
 
+	# set default schedTune value for foreground/top-app
+	echo 1 >  /dev/stune/foreground/schedtune.prefer_idle
+	echo 5 >  /dev/stune/top-app/schedtune.boost
+	echo 1 >  /dev/stune/top-app/schedtune.prefer_idle
+	echo 1 >  /dev/stune/background/schedtune.prefer_idle
+	echo 1 >  /dev/stune/schedtune.prefer_idle
+	
 	# configure input boost settings
 	echo "0:1324800 1:1324800 2:1324800 3:1324800 4:1036800 5:1036800 6:1036800 7:825800" > /sys/module/cpu_boost/parameters/input_boost_freq
 	echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
