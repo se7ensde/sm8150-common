@@ -42,7 +42,10 @@
          near events -->
     <bool name="doze_brightness_sensor_reports_proximity">false</bool>
 
-    <!-- Fingerprint Post Reset Runnables 
-    <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
+    <!-- Fingerprint Post Reset Runnables -->
+    <bool name="config_FingerprintPostResetRunnableForAllClients">true</bool>
+
+    <!-- FOD Icon Dimming -->
+    <bool name="config_targetUsesInKernelDimming">false</bool>
 
 </resources>
