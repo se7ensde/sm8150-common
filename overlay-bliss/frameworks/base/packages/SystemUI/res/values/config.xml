@@ -42,7 +42,4 @@
          near events -->
     <bool name="doze_brightness_sensor_reports_proximity">false</bool>
 
-    <!-- Fingerprint Post Reset Runnables 
-    <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
-
 </resources>
