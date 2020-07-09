@@ -450,6 +450,8 @@
 
     <integer name="config_defaultMaxCachedProcesses">64</integer>
 
+    <integer name="defaultRefreshRate">0</integer>
+
     <integer-array name="config_availableColorModes">
         <item>0</item>
         <item>1</item>
