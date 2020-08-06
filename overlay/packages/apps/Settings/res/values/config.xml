@@ -26,9 +26,6 @@
 
     <integer name="config_fingerprintSensorLocation">4</integer>
 
-    <!-- Battery Health Overlay -->
-    <bool name="config_supportBatteryHealth">true</bool>
-
     <!-- Whether or not the device is capable of multiple levels of vibration intensity.
          Note that this is different from whether it can control the vibration amplitude as some
          devices will be able to vary their amplitude but do not possess enough dynamic range to
