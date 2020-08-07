@@ -33,8 +33,8 @@
     <bool name="config_vibration_supports_multiple_intensities">true</bool>
 
     <!-- Battery Health -->
-    <bool name="config_supportBatteryHealth">false</bool>
+    <bool name="config_supportBatteryHealth">true</bool>
     <string name="config_batChargeCycle">/sys/class/power_supply/bms/charge_counter</string>
     <string name="config_batDesCap">/sys/class/power_supply/bms/charge_full</string>
-    <string name="config_batCurCap">/sys/class/power_supply/bms/charge_now_raw</string>
+    <string name="config_batCurCap">/sys/class/power_supply/bms/ctterharge_now_raw</string>
 </resources>
