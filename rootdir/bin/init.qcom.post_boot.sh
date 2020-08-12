@@ -4283,13 +4283,6 @@ case "$target" in
 
 	#set LMK tweaks
 	echo  "14936,29872,44808,59744,74680,89616" > /sys/module/lowmemorykiller/parameters/minfree
-  
-        # set default schedTune value for foreground/top-app
-        echo 1 >  /dev/stune/foreground/schedtune.prefer_idle
-        echo 5 >  /dev/stune/top-app/schedtune.boost
-        echo 1 >  /dev/stune/top-app/schedtune.prefer_idle
-        echo 1 >  /dev/stune/background/schedtune.prefer_idle
-        echo 1 >  /dev/stune/schedtune.prefer_idle
 	
 	# Disable wsf, beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
