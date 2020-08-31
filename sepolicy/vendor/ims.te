@@ -1,1 +1,1 @@
-allow ims diag_device:chr_file { ioctl read write getattr open };
+allow ims diag_device:chr_file rw_file_perms;
