@@ -98,6 +98,7 @@ BOARD_USES_QCNE := true
 
 # FOD
 TARGET_SURFACEFLINGER_FOD_LIB := //$(VENDOR_PATH):libfod_extension.oneplus_msmnile
+TARGET_USES_FOD_ZPOS := true
 
 # Dex
 BOARD_USES_SYSTEM_OTHER_ODEX := true
