@@ -7,7 +7,6 @@ vendor.nxp.nxpnfc::INxpNfc                                                 u:obj
 vendor.nxp.nxpwiredse::INxpWiredSe                                         u:object_r:hal_wiredse_hwservice:s0
 vendor.qti.hardware.fingerprint::IQtiExtendedFingerprint                   u:object_r:hal_fingerprint_hwservice:s0
 vendor.oneplus.camera.CameraHIDL::IOnePlusCameraProvider                   u:object_r:hal_cameraHIDL_hwservice:s0
-vendor.oneplus.camera.CameraMDMHIDL::IOnePlusCameraMDM                     u:object_r:hal_cameraHIDL_hwservice:s0
 vendor.oneplus.fingerprint.extension::IVendorFingerprintExtensions         u:object_r:hal_fingerprint_hwservice:s0
 vendor.oneplus.hardware.display::IOneplusDisplay                           u:object_r:hal_display_hwservice:s0
 vendor.oneplus.hardware.drmkey::IOneplusDrmKey                             u:object_r:hal_drmkey_hwservice:s0
