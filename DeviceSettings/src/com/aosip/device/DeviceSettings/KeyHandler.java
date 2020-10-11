@@ -232,4 +232,41 @@ public class KeyHandler implements DeviceKeyHandler {
             }
         }
     }
+
+    private void onDisplayOff() {
+        if (DEBUG) Log.i(TAG, "Display off");
+        if (mClientObserver != null) {
+            mClientObserver.stopWatching();
+            mClientObserver = null;
+        }
+    }
+
+    private void onDisplayOn() {
+        if (DEBUG) Log.i(TAG, "Display on");
+        if ((mClientObserver == null) && (isOPCameraAvail)) {
+            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
+            mClientObserver.startWatching();
+        }
+    }
+
+    private class ClientPackageNameObserver extends FileObserver {
+
+        public ClientPackageNameObserver(String file) {
+            super(CLIENT_PACKAGE_PATH, MODIFY);
+        }
+
+        @Override
+        public void onEvent(int event, String file) {
+            String pkgName = Utils.getFileValue(CLIENT_PACKAGE_PATH, "0");
+            if (event == FileObserver.MODIFY) {
+                try {
+                    Log.d(TAG, "client_package" + file + " and " + pkgName);
+                    mProvider = IOnePlusCameraProvider.getService();
+                    mProvider.setPackageName(pkgName);
+                } catch (RemoteException e) {
+                    Log.e(TAG, "setPackageName error", e);
+                }
+            }
+        }
+    }
 }
