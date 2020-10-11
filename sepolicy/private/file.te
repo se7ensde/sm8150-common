@@ -1,2 +1,2 @@
-type rr_data_file, file_type, data_file_type,  core_data_file_type;
+type crdroid_data_file, file_type, data_file_type,  core_data_file_type;
 
